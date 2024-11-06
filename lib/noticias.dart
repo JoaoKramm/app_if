@@ -23,13 +23,33 @@ class Noticias extends StatelessWidget {
             title: Text(noticias[index]['titulo']!),
             subtitle: Text(noticias[index]['subtitulo']!),
             onTap: () {
-              // Ação ao clicar na notícia
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text('Você clicou na notícia ${index + 1}')),
               );
             },
           );
         },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.domain_verification),
+            label: 'Destaques',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.newspaper),
+            label: 'Notícias',
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Ação do botão flutuante, como navegar para a página inicial
+          Navigator.pop(context);
+        },
+        tooltip: 'Início',
+        child: const Icon(Icons.home),
       ),
     );
   }

@@ -18,6 +18,26 @@ class EspacoServidor extends StatelessWidget {
           style: TextStyle(fontSize: 20),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.domain_verification),
+            label: 'Destaques',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.newspaper),
+            label: 'Notícias',
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context); // Exemplo de ação do botão flutuante
+        },
+        tooltip: 'Início',
+        child: const Icon(Icons.home),
+      ),
     );
   }
 }

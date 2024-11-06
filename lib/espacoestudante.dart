@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'destaques.dart';
+import 'noticias.dart';
 
 class EspacoEstudante extends StatelessWidget {
   final Color temaPrincipal = Colors.green;
@@ -69,6 +71,47 @@ class EspacoEstudante extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: MenuInferior(context),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: BotaoFlutuante(context),
+    );
+  }
+
+  Widget MenuInferior(BuildContext context) {
+    return BottomNavigationBar(
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.domain_verification),
+          label: 'Destaques',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.newspaper),
+          label: 'Notícias',
+        ),
+      ],
+      onTap: (index) {
+        if (index == 0) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Destaques()),
+          );
+        } else if (index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Noticias()),
+          );
+        }
+      },
+    );
+  }
+
+  Widget BotaoFlutuante(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        Navigator.popUntil(context, (route) => route.isFirst);
+      },
+      tooltip: 'Início',
+      child: const Icon(Icons.home),
     );
   }
 }

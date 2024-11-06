@@ -14,7 +14,6 @@ import 'package:app_if/acesso_informacao.dart';
 
 
 
-
 void main() {
   runApp(MinhaAplicacao());
 }
@@ -171,8 +170,6 @@ class MinhaAplicacao extends StatelessWidget {
       ),
     );
   }
-
-
   Widget MenuInferior() {
     return BottomNavigationBar(
       items: [
