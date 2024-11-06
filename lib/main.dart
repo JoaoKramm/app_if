@@ -2,6 +2,16 @@ import 'package:app_if/espacoestudante.dart';
 import 'package:flutter/material.dart';
 import 'destaques.dart';
 import 'noticias.dart';
+import 'package:app_if/espacoestudante.dart';
+import 'package:app_if/noticias.dart';
+import 'package:app_if/espacoservidor.dart';
+import 'package:app_if/polos.dart';
+import 'package:app_if/cursos.dart';
+import 'package:app_if/editais.dart';
+import 'package:app_if/processos_seletivos.dart';
+import 'package:app_if/concursos.dart';
+import 'package:app_if/acesso_informacao.dart';
+
 
 
 
@@ -72,8 +82,18 @@ class MinhaAplicacao extends StatelessWidget {
             title: Text('Espaço do Estudante'),
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context)=>EspacoEstudante()),
+                context,
+                MaterialPageRoute(builder: (context) => EspacoEstudante()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.newspaper),
+            title: Text('Notícias'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Noticias()),
               );
             },
           ),
@@ -81,55 +101,77 @@ class MinhaAplicacao extends StatelessWidget {
             leading: Icon(Icons.account_circle),
             title: Text('Espaço do Servidor'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EspacoServidor()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.account_balance_sharp),
             title: Text('Polos'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Polos()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.account_tree_outlined),
             title: Text('Cursos'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Cursos()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.border_color_outlined),
             title: Text('Editais'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Editais()),
+              );
             },
           ),
           ListTile(
-            leading: Icon(Icons.book),
+            leading: Icon(Icons.settings),
             title: Text('Processos Seletivos'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProcessosSeletivos()),
+              );
             },
           ),
           ListTile(
-            leading: Icon(Icons.newspaper),
+            leading: Icon(Icons.settings),
             title: Text('Concursos'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Concursos()),
+              );
             },
           ),
           ListTile(
-            leading: Icon(Icons.info_outline),
-            title: Text('Acesso a informação'),
+            leading: Icon(Icons.settings),
+            title: Text('Acesso à Informação'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AcessoInformacao()),
+              );
             },
           ),
         ],
       ),
     );
   }
+
 
   Widget MenuInferior() {
     return BottomNavigationBar(
